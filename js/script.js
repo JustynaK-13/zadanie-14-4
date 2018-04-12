@@ -41,7 +41,13 @@ var element =
 //my code
 
   var Movie = React.createClass({
-      render: function(movie){
-      return React.createElement('li', {key: movie.id});      
+    propTypes: {
+      Movie: React.PropTypes.object.isRequired,
+    },
+      render: function() {
+        return (
+            React.createElement('li', {}),
+            React.createElement(Movie, {key: movie.id});     
+        )
       }
   });
